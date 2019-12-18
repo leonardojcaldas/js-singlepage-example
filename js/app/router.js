@@ -60,7 +60,7 @@ define(function(){
                 controller.start();
 
             } catch (error) {
-                console.log(error.stack);
+                console.log(error.message + " " + error.stack);
                 loadDefaultRoute();
             }
         });

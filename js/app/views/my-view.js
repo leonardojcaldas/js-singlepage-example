@@ -39,7 +39,7 @@ define(function() {
         return ('<button> Click me for a random film </button>');
     }
 
-    function card(data) {
+    function card(film) {
         return (
             '<div>' +
             '<p><strong> Title: </strong>' + film.title + '</p>' +
@@ -50,12 +50,13 @@ define(function() {
         );
     }
 
+    function bindRandomClickHandler(handler) {
+
+        internals.handlers.randomClickHandler = function() {
+            handler();
+        }
+    }
+
     return externals;
 });
 
-function bindRandomClickHandler(handler) {
-
-    internals.handlers.randomClickHandler = function() {
-        handler();
-    }
-}
